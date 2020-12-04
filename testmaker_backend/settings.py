@@ -125,3 +125,9 @@ try:
     from .local import *
 except Exception:
     pass
+
+try:
+    from .server_settings import *
+except Exception:
+    pass
+
