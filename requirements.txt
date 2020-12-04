@@ -1,4 +1,4 @@
 Django==3.0
 djangorestframework==3.12.2
-psycopg2==heroku logs --tail2.8.6
+psycopg2==2.8.6
 gunicorn
