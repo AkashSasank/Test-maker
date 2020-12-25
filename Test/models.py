@@ -1,12 +1,13 @@
 import uuid
 from django.db import models
 
+from bases.models import BaseModel
+
 
 # Create your models here.
 
 
-class QuestionCategory(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class QuestionCategory(BaseModel):
     category_name = models.CharField(max_length=50, null=True)
     description = models.TextField(max_length=300, null=True, blank=True)
     is_active = models.BooleanField(default=True)
@@ -15,8 +16,7 @@ class QuestionCategory(models.Model):
         return self.category_name
 
 
-class Question(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class Question(BaseModel):
     question_category = models.ForeignKey(QuestionCategory, on_delete=models.SET_NULL,
                                           null=True, blank=True)
     question_text = models.TextField(max_length=500)
@@ -28,8 +28,7 @@ class Question(models.Model):
         return str(self.question_text)
 
 
-class TestCategory(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class TestCategory(BaseModel):
     category_name = models.CharField(max_length=50, null=True)
     description = models.TextField(max_length=300, null=True, blank=True)
 
@@ -37,8 +36,7 @@ class TestCategory(models.Model):
         return self.category_name
 
 
-class Test(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class Test(BaseModel):
     category_name = models.ForeignKey(TestCategory, on_delete=models.CASCADE, null=True)
     questions = models.ManyToManyField(Question, related_name='question')
     is_active = models.BooleanField(default=True)
