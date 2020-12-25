@@ -8,6 +8,7 @@ from django.db import models
 class QuestionCategory(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     category_name = models.CharField(max_length=50, null=True)
+    description = models.TextField(max_length=300, null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -30,6 +31,7 @@ class Question(models.Model):
 class TestCategory(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     category_name = models.CharField(max_length=50, null=True)
+    description = models.TextField(max_length=300, null=True, blank=True)
 
     def __str__(self):
         return self.category_name
