@@ -35,8 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "rest_framework",
     'Test',
     'user',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -120,14 +122,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-#
-# AUTH_USER_MODEL = "user.User"
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'src.authenticate.JWTAuthentication'
-    ]
-}
 
 try:
     from .local import *
