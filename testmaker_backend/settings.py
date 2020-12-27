@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'Test',
     'user',
     'api',
+    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -118,11 +119,13 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
+REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = [
+    os.path.join(REACT_APP_DIR, 'build', 'static'),
+]
 try:
     from .local import *
 except Exception:
