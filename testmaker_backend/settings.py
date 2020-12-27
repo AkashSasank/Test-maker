@@ -24,7 +24,6 @@ SECRET_KEY = '7a#(q&tz^s!#65=72jqh4fkd*^#a@=1+s_7&k6myvp*$41gy)j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -126,6 +125,9 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, 'build', 'static'),
 ]
+
+ALLOWED_HOSTS = ['*']
+
 try:
     from .local import *
 except Exception:
