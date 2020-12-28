@@ -124,6 +124,7 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, 'build', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 ALLOWED_HOSTS = ['*']
