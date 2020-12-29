@@ -52,7 +52,7 @@ ROOT_URLCONF = 'testmaker_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'staticfiles')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,20 +119,20 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, 'build', 'static'),
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'build'),
 ]
 
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 ALLOWED_HOSTS = ['*']
+
+try:
+    from .server_settings import *
+except Exception:
+    pass
+
 
 try:
     from .local import *
 except Exception:
     pass
 
-try:
-    from .server_settings import *
-except Exception:
-    pass
