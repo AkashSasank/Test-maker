@@ -1,6 +1,6 @@
 import os
 
-ALLOWED_HOSTS = ['test-taking-app.herokuapp.com']
+ALLOWED_HOSTS = ['test-taking-app.herokuapp.com', 'localhost']
 
 DATABASES = {
     'default': {
