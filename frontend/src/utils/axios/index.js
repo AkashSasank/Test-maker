@@ -3,7 +3,7 @@ import axios from 'axios';
 import { onRequest, onRequestError, onResponse, onResponseError } from './interceptors'
 
 const api = axios.create({
-  baseURL: `http://localhost:8000/api/v1/`, 
+  baseURL: `https://test-taking-app.herokuapp.com/api/v1/`, 
   timeout: 3000,
 });
 
