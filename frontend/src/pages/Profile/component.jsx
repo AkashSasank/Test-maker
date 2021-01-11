@@ -1,8 +1,7 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { App, AppHeader, AppLink} from './style';
+import { App, AppHeader} from './style';
 export default function LogIn() {
   return (
     <App>

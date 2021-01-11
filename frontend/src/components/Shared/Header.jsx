@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { HeaderDiv, HeaderRight } from './style';
-import logo from '../../assets/images/logo.jpg';
 
 export default class Header extends React.Component
 {

@@ -6,6 +6,7 @@ import SignUp from "../pages/Signup";
 import Profile from "../pages/Profile";
 import NotFound from "../pages/NotFound";
 import Catalogue from "../pages/Catalogue";
+import TestPage from "../pages/TestPage";
 import Header from "../components/Shared/Header";
 import Footer from "../components/Shared/Footer";
 
@@ -20,6 +21,7 @@ const routes=(
 						<Route exact path="/sign-up" component={SignUp} />,
 						<Route exact path="/profile" component={Profile} />,
 						<Route exact path="/tests" component={Catalogue} />,
+						<Route exact path="/test/:testId" component={TestPage} />
 						<Route component={NotFound} />
 					</Switch>
 				</div>

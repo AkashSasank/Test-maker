@@ -36,7 +36,7 @@ class TestListSerializer(ModelSerializer):
 
     class Meta:
         model = Test
-        fields = ['category', 'test_url']
+        fields = ['category', 'test_url', 'uuid']
 
     def get_category(self, obj):
         return obj.category_name.category_name
