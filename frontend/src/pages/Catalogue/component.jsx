@@ -1,11 +1,10 @@
 import React from 'react';
 
-import logo from './logo.svg';
-import { App, AppLogo, AppHeader, AppLink} from './style';
-import Sample from '../../components/Sample';
+import { App, AppHeader} from './style';
 import api from '../../utils/axios';
+import TestButton from '../../components/TestButton';
 
-export default class Home extends React.Component {
+export default class Catalogue extends React.Component {
   state = {
     question_sets:[],
     question_categories:[]
@@ -18,7 +17,7 @@ export default class Home extends React.Component {
         this.setState({question_sets: r})     
         this.setState({question_categories: Object.keys(r)})  
       })
-  }l̥
+  }
 
   render(){
     return (
@@ -28,20 +27,18 @@ export default class Home extends React.Component {
           {
             this.state.question_categories.map(
               category=>(
-               <div class="container w-auto p-5 bg-dark rounded shadow-lg ">
+               <div class="container w-auto p-5 bg-dark rounded shadow-lg " key={'container'+category}>
                  <h3>{category}</h3>
-
-                 <div class="d-flex justify-content-around w-100">
-                {this.state.question_sets[category].map(
-                  (question, index)=>(
-                    <span class="badge badge-secondary">Test {index + 1}</span>
-                    
+                 <div class="d-flex  flex-wrap justify-content-around w-100 p-5" key={'test-links-container'+category} >
+                {this.state.question_sets[category]['uuid'].map(
+                  (question_urls, index)=>(
+                    <TestButton key={'test-link'+ index} testName={'Test' + (index + 1)} testURL={question_urls}> </TestButton>
                   )
                 )}
                 </div>
                 </div>
               )
-            )
+            ) 
           }
          </div>
   

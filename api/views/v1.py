@@ -48,10 +48,13 @@ class TestListView(ListAPIView):
         data = dict()
         for category in category_names:
             urls = []
+            ids = []
             for item in serialized_data:
                 if item.get('category') == category:
                     test_url = item.get('test_url', 1)
+                    uuid = item.get('uuid', 1)
+                    ids.append(uuid)
                     urls.append(test_url)
-            data[category] = urls
+            data[category] = {'urls': urls, 'uuid': ids}
 
         return Response([data])
