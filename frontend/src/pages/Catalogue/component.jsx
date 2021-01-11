@@ -23,7 +23,7 @@ export default class Catalogue extends React.Component {
     return (
       <App>
         <AppHeader>
-        <div class="d-flex justify-content-around w-100">
+        <div class="d-flex flex-wrap justify-content-around w-100">
           {
             this.state.question_categories.map(
               category=>(
