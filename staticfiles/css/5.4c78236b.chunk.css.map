@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/QuestionNavBlock/style.css"],"names":[],"mappings":"AAAA,YACI,SACJ,CACA,MACI,UACJ","file":"5.4c78236b.chunk.css","sourcesContent":[".pill:hover{\r\n    opacity: 1;\r\n}\r\n.pill{\r\n    opacity: 0.5;\r\n}"]}
