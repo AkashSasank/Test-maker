@@ -1,0 +1,6 @@
+.pill:hover{
+    opacity: 1;
+}
+.pill{
+    opacity: 0.5;
+}
